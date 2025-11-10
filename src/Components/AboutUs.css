@@ -1,0 +1,206 @@
+.about-page {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #f9fdfd;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.about-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 120px;
+  background: linear-gradient(90deg, #e9f8f9, #ffffff);
+  gap: 40px;
+}
+
+.about-content {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.about-subtitle {
+  color: #008c99;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #002c3e;
+  margin-bottom: 20px;
+}
+
+.about-title span {
+  color: #009fae;
+}
+
+.about-description {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.about-image img {
+  width: 480px;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Mission & Vision Section */
+.about-mission {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  padding: 60px 120px;
+  background-color: #f0f9fa;
+  flex-wrap: wrap;
+}
+
+.mission-card {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.about-card {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+}
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.mission-card h3 {
+  color: #008c99;
+  margin-bottom: 15px;
+}
+.about-card h3 {
+  color: #008c99;
+  margin-bottom: 15px;
+}
+
+.mission-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.about-cta {
+  text-align: center;
+  padding: 80px 20px;
+  background: #008c99;
+  color: white;
+}
+
+.about-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-btn {
+  background: #008c99;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background: #005f66;
+  color: #fff;
+}
+
+/* ---------------------- */
+/* Responsive Design */
+/* ---------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .about-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 50px;
+  }
+
+  .about-content {
+    padding: 0;
+  }
+
+  .about-title {
+    font-size: 2.1rem;
+  }
+
+  .about-image img {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  .about-mission {
+    padding: 50px;
+  }
+
+  .mission-card {
+    padding: 30px;
+  }
+   .about-card {
+    padding: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 50px 20px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+  }
+
+  .about-mission {
+    padding: 40px 20px;
+  }
+
+  .mission-card {
+    padding: 25px;
+  }
+
+  .about-cta {
+    padding: 60px 15px;
+  }
+
+  .about-cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-btn {
+    width: 80%;
+    padding: 14px 0;
+  }
+}

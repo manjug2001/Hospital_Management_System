@@ -1,0 +1,151 @@
+/* ===== NAVIGATION BAR ===== */
+.navbar {
+  width: 100%;
+  background-color: #b9ecf0;
+  box-shadow: 0 4px 10px rgba(22, 128, 139, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-sizing: border-box; /* keeps padding inside width */
+  overflow: hidden; /* prevents items from overflowing */
+}
+
+/* Left: logo + title */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.navbar-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px;
+  margin-right: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0a828d;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Center: navigation links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  flex: 1 1 0;              /* Take up remaining space */
+  width: 100%;               /* Stretch to fill center area */
+  justify-content: space-evenly; /* or space-between/space-around */
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* prevents overflow on smaller screens */
+}
+
+.navbar-links li {
+  font-size: 16px;
+  color: #2c4555;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.navbar-links li:hover {
+  color: #0a828d;
+  transform: scale(1.05);
+}
+
+/* Right: buttons */
+.navbar-actions {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.login-btn {
+  background: #16808b;
+  color: #fff;
+}
+
+.login-btn:hover {
+  background: #0d6e78;
+}
+
+.signup-btn {
+  background: #e9f5f9;
+  color: #16808b;
+  border: 1px solid #16808b44;
+}
+
+.signup-btn:hover {
+  background: #d7f2f7;
+}
+
+/* ===== HOME PAGE BACKGROUND ===== */
+.home-container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===== RESPONSIVE FIX ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+
+  .navbar-links {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .navbar-links {
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .navbar-actions {
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+}

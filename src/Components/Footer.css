@@ -1,0 +1,126 @@
+/* ===== FOOTER SECTION ===== */
+.footer {
+  background-color: #0a828d;
+  color: #ffffff;
+  padding: 0px 0 1px 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ---- Container ---- */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 40px;
+}
+
+/* ---- Each Column ---- */
+.footer-col {
+  flex: 1 1 250px;
+  min-width: 220px;
+  padding-right: 20px;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #ffffff;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ---- Paragraph text ---- */
+.footer-col p {
+  font-size: 15px;
+  color: #d4eff1;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* ---- Links ---- */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #d4eff1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* ---- Social Icons ---- */
+.footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #b9ecf0;
+}
+
+/* ---- Bottom Bar ---- */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 0px 0;
+  font-size: 14px;
+  color: #e0f2f3;
+  margin-top: 0px;
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 1024px) {
+  .footer-container {
+    gap: 30px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    max-width: 350px;
+  }
+
+  .footer-col h3 {
+    border: none;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}

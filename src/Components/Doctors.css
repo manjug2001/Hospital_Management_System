@@ -1,0 +1,114 @@
+.doctors-page {
+  background-color: #f8fdfe;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden; /* Prevents unwanted horizontal scroll */
+}
+
+/* Center heading properly */
+.doctors-heading {
+  text-align: center;
+  color: #0a828d;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 40px 0 20px;
+}
+
+/* Filter section aligned center under heading */
+.filter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 10px;
+  font-size: 16px;
+  color: #0a828d;
+}
+
+.filter-section select {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #0a828d;
+  font-size: 15px;
+  color: #0a828d;
+  cursor: pointer;
+  background-color: #f8fdfe;
+  ;
+}
+
+/* Doctor grid - fills full width */
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 0 40px;
+  justify-items: center;
+}
+
+/* Doctor card styling */
+.doctor-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  padding: 25px 15px;
+  transition: all 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.doctor-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.doctor-card h3 {
+  color: #0a828d;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.specialist {
+  color: #444;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.experience {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.book-btn {
+  background-color: #0a828d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #086974;
+}
