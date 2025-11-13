@@ -1,0 +1,154 @@
+/* === Doctor Dashboard Page Layout === */
+.doctor-dashboard-wrapper {
+  background-color: #f8fdfe;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Arial, sans-serif;
+    width: 100vw;
+}
+
+/* === Main Section === */
+.doctor-dashboard-main {
+  text-align: center;
+  padding: 80px 5%;
+  flex: 1;
+}
+
+.doctor-dashboard-heading {
+  color: #0a828d;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.doctor-dashboard-subheading {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+/* === Grid Layout for Dashboard Cards === */
+.doctor-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* === Individual Dashboard Cards === */
+.doctor-dashboard-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e3e3e3;
+  padding: 30px 25px;
+  text-align: left;
+  color: #111;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.doctor-dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* === Card Content === */
+.doctor-dashboard-card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 18px;
+  align-self: center;
+}
+
+.doctor-dashboard-card h3 {
+  color: #0a828d;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.doctor-dashboard-card p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+/* === Button Style === */
+.doctor-dashboard-btn {
+  background-color: #0a828d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  align-self: center;
+  transition: background 0.3s ease;
+}
+
+.doctor-dashboard-btn:hover {
+  background-color: #086974;
+}
+
+/* === Responsive Design === */
+@media (max-width: 1024px) {
+  .doctor-dashboard-main {
+    padding: 60px 4%;
+  }
+
+  .doctor-dashboard-heading {
+    font-size: 28px;
+  }
+
+  .doctor-dashboard-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-dashboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .doctor-dashboard-card {
+    min-height: 260px;
+  }
+
+  .doctor-dashboard-card h3 {
+    font-size: 18px;
+  }
+
+  .doctor-dashboard-card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-dashboard-main {
+    padding: 50px 3%;
+  }
+
+  .doctor-dashboard-heading {
+    font-size: 24px;
+  }
+
+  .doctor-dashboard-card {
+    padding: 20px 15px;
+  }
+
+  .doctor-dashboard-btn {
+    width: 100%;
+  }
+}

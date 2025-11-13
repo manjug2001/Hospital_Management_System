@@ -98,3 +98,21 @@ body {
 .signup-btn:hover {
   background: #dc2626;
 }
+
+.logout-btn {
+  background-color: #b91c1c;
+  color: white;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background-color: #991b1b;
+}
+.logout-btn {
+  background-color: #b91c1c;
+  color: #fff;
+}
+
+.logout-btn:hover {
+  background-color: #991b1b;
+}

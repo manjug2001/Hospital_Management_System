@@ -1,0 +1,167 @@
+.appointment-page {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f8fdfe;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centered layout */
+.appointment-main {
+  flex: 1;
+  padding: 60px 20px;
+  width: 100vw;
+  text-align: center;
+}
+
+.appointment-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0a828d;
+  margin-bottom: 10px;
+}
+
+.appointment-subtitle {
+  color: #555;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+
+/* Form container */
+.appointment-form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.appointment-form {
+  width: 100%;
+  max-width: 550px;
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Form elements */
+.appointment-form label {
+  display: block;
+  font-weight: 600;
+  color: #0a828d;
+  margin-bottom: 6px;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+  border: 1px solid #0a828d;
+  box-shadow: 0 0 5px rgba(10, 130, 141, 0.3);
+}
+
+.appointment-form textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Button styling */
+.book-btn {
+  width: 100%;
+  background-color: #0a828d;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #086974;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .appointment-form {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+
+  .appointment-heading {
+    font-size: 28px;
+  }
+}
+/* Force light style even in dark browser themes */
+input,
+select,
+textarea {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important; /* For Safari/Chrome dark mode */
+  caret-color: #0a828d; /* Cursor color */
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777777 !important;
+  opacity: 1;
+}
+
+/* For select dropdowns */
+select option {
+  background-color: #ffffff;
+  color: #000000;
+}
+/* Fix date & time input icons visibility in dark mode */
+input[type="date"],
+input[type="time"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  position: relative;
+}
+
+/* Ensures icons stay visible */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0); /* keep dark icon on light bg */
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* When input is focused */
+input[type="date"]:focus,
+input[type="time"]:focus {
+  border: 1px solid #0a828d;
+  box-shadow: 0 0 5px rgba(10, 130, 141, 0.3);
+}
+
+/* Optional: prevent Chrome from making them greyed out */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button,
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-clear-button {
+  display: none;
+}

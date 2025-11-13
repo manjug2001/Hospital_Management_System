@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Doctors.css";
-import Header from "./Header";
 import Footer from "./Footer";
-import Navbar from "./Navbar";
-import ramesh from "../assets/ramesh.jpg";
-import anjali from "../assets/anjali.jpeg";
-import priya from "../assets/priya.jpeg";
-import sanjay from "../assets/sanjay.jpeg";
-import rajesh from "../assets/rajesh.jpeg";
+import Header from "./Header";
 
 const Doctors = () => {
   const [filter, setFilter] = useState("All");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("isPatientLoggedIn");
+    setIsLoggedIn(!!loggedIn);
+  }, []);
 
   const doctorsData = [
     {
@@ -20,7 +20,7 @@ const Doctors = () => {
       experience: 12,
       description:
         "Expert in heart-related diseases and cardiac surgery with over a decade of successful treatments.",
-      img: ramesh,
+      img: "https://via.placeholder.com/150",
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const Doctors = () => {
       experience: 8,
       description:
         "Specialized in skin, hair, and nail disorders with modern dermatological practices.",
-      img: anjali,
+      img: "https://via.placeholder.com/150",
     },
     {
       id: 3,
@@ -38,25 +38,7 @@ const Doctors = () => {
       experience: 15,
       description:
         "Renowned neurologist with extensive experience in treating brain and nervous system disorders.",
-      img: rajesh,
-    },
-    {
-      id: 4,
-      name: "Dr. Priya Nair",
-      specialist: "Gynecologist",
-      experience: 10,
-      description:
-        "Providing compassionate care and specialized treatment in women’s health and maternity.",
-      img: priya,
-    },
-    {
-      id: 5,
-      name: "Dr. Sanjay Mehta",
-      specialist: "Orthopedic",
-      experience: 9,
-      description:
-        "Experienced orthopedic surgeon focusing on joint replacements and sports injuries.",
-      img: sanjay,
+      img: "https://via.placeholder.com/150",
     },
   ];
 
@@ -68,12 +50,10 @@ const Doctors = () => {
   return (
     <div className="doctors-page">
       <Header />
-      {/* <Navbar /> */}
 
       <main className="doctors-main">
         <h2 className="doctors-heading">Our Expert Doctors</h2>
 
-        {/* Filter Section */}
         <div className="filter-section">
           <label htmlFor="specialist">Filter by Specialist: </label>
           <select
@@ -85,12 +65,9 @@ const Doctors = () => {
             <option value="Cardiologist">Cardiologist</option>
             <option value="Dermatologist">Dermatologist</option>
             <option value="Neurologist">Neurologist</option>
-            <option value="Gynecologist">Gynecologist</option>
-            <option value="Orthopedic">Orthopedic</option>
           </select>
         </div>
 
-        {/* Doctor Cards */}
         <div className="doctor-grid">
           {filteredDoctors.map((doctor) => (
             <div className="doctor-card" key={doctor.id}>
@@ -99,7 +76,15 @@ const Doctors = () => {
               <p className="specialist">{doctor.specialist}</p>
               <p className="experience">{doctor.experience} Years Experience</p>
               <p className="description">{doctor.description}</p>
-              <button className="book-btn">Book Appointment</button>
+
+              {isLoggedIn && (
+                <button
+                  className="book-btn"
+                  onClick={() => (window.location.href = "/appointment")}
+                >
+                  Book Appointment
+                </button>
+              )}
             </div>
           ))}
         </div>

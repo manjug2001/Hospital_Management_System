@@ -1,0 +1,111 @@
+.doctor-header {
+  width: 100%;
+  background: linear-gradient(to right, #0aa1ae, #16c2b8, #e0f7f9);
+  color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+  transition: background 0.4s ease;
+}
+
+.doctor-header.scrolled {
+  background: #0aa1ae;
+}
+
+.doctor-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  flex-wrap: wrap;
+}
+
+/* === Logo === */
+.doctor-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doctor-logo h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+}
+
+.highlight {
+  color: #ef4444;
+}
+
+.doctor-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 6px;
+  color: #ffe4e6;
+}
+
+/* === Nav Links === */
+.doctor-nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.doctor-nav-links li {
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.doctor-nav-links li:hover {
+  color: #ffe4e6;
+}
+
+/* === Logout Button === */
+.doctor-nav-actions .logout-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: #ef4444;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.doctor-nav-actions .logout-btn:hover {
+  background: #dc2626;
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .doctor-header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .doctor-nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .doctor-header-container {
+    padding: 1rem;
+  }
+
+  .doctor-logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .doctor-nav-links li {
+    font-size: 0.9rem;
+  }
+}

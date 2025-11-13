@@ -1,0 +1,174 @@
+/* === Billing & Payments Page === */
+.billing-page {
+  background-color: #f2f7f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Arial, sans-serif;
+    width: 100vw;
+}
+
+/* === Main Content === */
+.billing-main {
+  flex: 1;
+  padding: 70px 6%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.billing-heading {
+  color: #004d4d;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.billing-subheading {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+
+/* === Billing Grid === */
+.billing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: start;
+  gap: 60px 70px; /* More spacing between cards */
+  max-width: 1400px;
+  margin: 0 auto 100px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* === Bill Card === */
+.bill-card {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 350px;
+  padding: 0;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  color: #111;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* === File Header (like PDF/Doc) === */
+.bill-card::before {
+  content: "";
+  display: block;
+  height: 45px;
+  background: linear-gradient(90deg, #0a828d, #12b2b8);
+  border-bottom: 3px solid #0a828d;
+}
+
+/* === Card Content === */
+.bill-content {
+  padding: 25px;
+}
+
+.bill-card h3 {
+  color: #0a828d;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.bill-card p {
+  color: #333;
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+/* === Status Labels === */
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+.status.paid {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.status.pending {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* === Buttons === */
+.billing-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.pay-btn,
+.download-btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.pay-btn {
+  background-color: #0a828d;
+  color: #fff;
+}
+
+.pay-btn:hover {
+  background-color: #086974;
+}
+
+.download-btn {
+  background-color: #0078d4;
+  color: #fff;
+}
+
+.download-btn:hover {
+  background-color: #005fa3;
+}
+
+/* === Hover Effect === */
+.bill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .billing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .billing-main {
+    padding: 40px 4%;
+  }
+
+  .billing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+  }
+
+  .bill-card::before {
+    height: 35px;
+  }
+}
