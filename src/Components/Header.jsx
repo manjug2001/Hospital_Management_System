@@ -28,22 +28,30 @@ export default function Header() {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userRole");
+    localStorage.removeItem("isAdmin"); // if exists
     setUserRole(null);
     navigate("/");
     window.location.reload();
   };
 
-  // ✅ Smart Home Navigation (based on role)
+  // Smart home button
   const handleHomeClick = () => {
     if (userRole === "patient") navigate("/dashboard");
     else if (userRole === "doctor") navigate("/doctor-dashboard");
     else navigate("/");
   };
 
+  // Smart profile navigation
+  const handleProfileClick = () => {
+    if (userRole === "patient") navigate("/profile");
+    else if (userRole === "doctor") navigate("/doctor-profile");
+  };
+
   return (
     <header className="header">
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        {/* Logo + Title */}
+
+        {/* Logo Section */}
         <div className="logo-section" onClick={handleHomeClick} style={{ cursor: "pointer" }}>
           <div className="logo-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -56,7 +64,7 @@ export default function Header() {
           </h1>
         </div>
 
-        {/* Navbar Links */}
+        {/* Nav Links */}
         <ul className="navbar-links">
           <li onClick={handleHomeClick}>Home</li>
           <li onClick={() => navigate("/about")}>About Us</li>
@@ -64,27 +72,34 @@ export default function Header() {
           <li onClick={() => navigate("/contact")}>Contact</li>
         </ul>
 
-        {/* Navbar Buttons */}
+        {/* Right Side Buttons + Profile Icon */}
         <div className="navbar-actions">
+
+          {/* If NOT logged in */}
           {!userRole ? (
             <>
-              <button
-                className="nav-btn login-btn"
-                onClick={() => navigate("/login")}
-              >
+              <button className="nav-btn login-btn" onClick={() => navigate("/login")}>
                 Login
               </button>
-              <button
-                className="nav-btn signup-btn"
-                onClick={() => navigate("/signup")}
-              >
+              <button className="nav-btn signup-btn" onClick={() => navigate("/signup")}>
                 Signup
               </button>
             </>
           ) : (
-            <button className="nav-btn logout-btn" onClick={handleLogout}>
-              Logout
-            </button>
+            <>
+              {/* Profile Icon */}
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                alt="Profile"
+                className="profile-icon"
+                onClick={handleProfileClick}
+              />
+
+              {/* Logout */}
+              <button className="nav-btn logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </>
           )}
         </div>
       </nav>

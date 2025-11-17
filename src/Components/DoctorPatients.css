@@ -1,0 +1,124 @@
+/* === Force Light Mode Fix === */
+html, body {
+  color-scheme: light !important;
+}
+
+* {
+  -webkit-text-fill-color: black !important;
+  color: black !important;
+}
+
+/* === Page Layout === */
+.patients-page {
+  background: #f8fdfe !important;
+  min-height: 100vh;
+  width: 100vw;
+  padding-bottom: 40px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.patients-main {
+  text-align: center;
+  padding: 60px 6%;
+}
+
+.patients-heading {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0a828d !important;
+}
+
+.patients-subheading {
+  color: #555 !important;
+  margin-bottom: 40px;
+  font-size: 15px;
+}
+
+/* === Search Bar === */
+.patients-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.patients-filters input {
+  width: 320px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc !important;
+  font-size: 15px;
+  background: #fff !important;
+}
+
+/* === Table === */
+.patients-table-wrapper {
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.patients-table {
+  width: 90%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  background: white !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.patients-table th {
+  background: #0a828d !important;
+  color: white !important;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  -webkit-text-fill-color: white !important;
+}
+
+.patients-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 15px;
+  background: white !important;
+  color: black !important;
+  -webkit-text-fill-color: black !important;
+}
+
+.patients-table tr:hover {
+  background: #f1fafa !important;
+}
+
+/* === Buttons === */
+.actions-col button {
+  margin: 2px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.view-btn {
+  background: #0a828d !important;
+}
+
+.history-btn {
+  background: #2563eb !important;
+}
+
+.reports-btn {
+  background: #4b5563 !important;
+}
+
+.delete-btn {
+  background: #ef4444 !important;
+}
+
+.no-results {
+  margin-top: 10px;
+  color: #888 !important;
+}

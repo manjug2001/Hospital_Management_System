@@ -1,13 +1,3 @@
-/* body {
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(to right, #0aa1ae 50%, #f6f8fa 50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 body.login-bg{
   min-height: 100vh;
   margin: 0;
@@ -70,7 +60,6 @@ body.login-bg{
   font-size: 15px;
   color: #2c4555;
   box-shadow: 0 1px 3px rgba(128, 169, 240, 0.05);
-  transition: box-shadow 0.2s;
 }
 
 .signup-form input:focus,
@@ -80,6 +69,43 @@ body.login-bg{
   background: #e4f7fb;
 }
 
+/* === Stylish Select Box === */
+.select-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.select-box select {
+  width: 100%;
+  padding: 13px 11px;
+  background: #e9f5f9;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  color: #2c4555;
+  cursor: pointer;
+  appearance: none;
+}
+
+.select-box select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #16808b44;
+  background: #e4f7fb;
+}
+
+.select-box::after {
+  content: "▼";
+  font-size: 12px;
+  color: #16808b;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* === Login button === */
 .signup-form button {
   width: 100%;
   padding: 13px 0;
@@ -90,7 +116,6 @@ body.login-bg{
   font-size: 17px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s;
   margin-bottom: 10px;
 }
 
@@ -98,13 +123,10 @@ body.login-bg{
   background: #088e98;
 }
 
-/* Login page specific rows */
 .login-extra-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 10px;
-  font-size: 15px;
 }
 
 .remember-label {
@@ -113,33 +135,28 @@ body.login-bg{
 
 .forgot-link {
   color: #14b9ff;
-  cursor: pointer;
   text-decoration: underline;
-  font-weight: 500;
+  cursor: pointer;
 }
 
 .signup-link-row {
   text-align: center;
   margin-top: 16px;
-  font-size: 15px;
 }
 
 .signup-link {
   color: #16808b;
   cursor: pointer;
-  font-weight: bold;
   text-decoration: underline;
 }
 
-/* Right side hospital circle */
+/* ===== Right Side Art ===== */
 .signup-right {
   flex: 0.9;
   background: #e9fafd;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 32px;
 }
 
 .hospital-circle {
@@ -155,14 +172,10 @@ body.login-bg{
 
 .circle-title {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: #138e8f;
   font-size: 1.1em;
+  width: 160px;
   text-align: center;
-  width: 200px;
-  font-weight: 500;
 }
 
 .circle-icon {
@@ -171,7 +184,6 @@ body.login-bg{
   background: #fff;
   border-radius: 50%;
   padding: 10px;
-  box-shadow: 0 2px 10px rgba(44, 143, 147, 0.10);
 }
 
 .icon1 { top: 0; left: 50%; transform: translate(-50%, 0); }
@@ -185,11 +197,8 @@ body.login-bg{
 
 .registration-details {
   margin-top: 32px;
+  padding: 20px;
   background: #f9fefe;
   border-radius: 6px;
-  padding: 20px;
-  font-size: 15px;
-  color: #15808b;
-  box-shadow: 0 1px 4px rgba(137, 208, 237, 0.11);
   text-align: center;
 }

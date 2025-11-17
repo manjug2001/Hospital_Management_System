@@ -1,6 +1,9 @@
+/* ===========================
+   DOCTOR HEADER MAIN STYLES
+   =========================== */
 .doctor-header {
   width: 100%;
-  background: linear-gradient(to right, #0aa1ae, #16c2b8, #e0f7f9);
+  background: linear-gradient(to right, #0aa1ae, #16c2b8, #0aa1ae);
   color: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -20,7 +23,9 @@
   flex-wrap: wrap;
 }
 
-/* === Logo === */
+/* ===========================
+   LOGO SECTION
+   =========================== */
 .doctor-logo {
   display: flex;
   align-items: center;
@@ -44,7 +49,9 @@
   color: #ffe4e6;
 }
 
-/* === Nav Links === */
+/* ===========================
+   NAVIGATION LINKS
+   =========================== */
 .doctor-nav-links {
   list-style: none;
   display: flex;
@@ -66,23 +73,57 @@
   color: #ffe4e6;
 }
 
-/* === Logout Button === */
-.doctor-nav-actions .logout-btn {
+/* ===========================
+   RIGHT SIDE (PROFILE + LOGOUT)
+   =========================== */
+.doctor-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  /* Make background same as header gradient */
+  background: inherit;
+  padding: 0 10px;
+}
+
+/* Profile Icon */
+.doctor-profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background: transparent;
+  border: 2px solid white;
+
+  transition: 0.3s ease;
+}
+
+.doctor-profile-icon:hover {
+  transform: scale(1.12);
+  border-color: #ffe4e6;
+}
+
+/* Logout Button */
+.logout-btn {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  background: #ef4444;
+
+  background: rgba(239, 68, 68, 0.9) !important;
   color: white;
   transition: all 0.3s ease;
 }
 
-.doctor-nav-actions .logout-btn:hover {
-  background: #dc2626;
+.logout-btn:hover {
+  background: #dc2626 !important;
 }
 
-/* === Responsive === */
+/* ===========================
+   RESPONSIVE
+   =========================== */
 @media (max-width: 992px) {
   .doctor-header-container {
     flex-direction: column;
@@ -107,5 +148,10 @@
 
   .doctor-nav-links li {
     font-size: 0.9rem;
+  }
+
+  .doctor-profile-icon {
+    width: 35px;
+    height: 35px;
   }
 }

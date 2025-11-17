@@ -14,10 +14,11 @@ import "./LoginPage.css";
 
 function LoginPage() {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     mobile: "",
     password: "",
-    role: "patient", // 👈 new field for login type
+    role: "patient",
   });
 
   const [error, setError] = useState("");
@@ -34,34 +35,46 @@ function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // --- Simulated authentication ---
-    if (formData.mobile && formData.password) {
-      setSubmitted(true);
-      setError("");
-
-      // ✅ Save login status & role
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("userRole", formData.role);
-
-      // ✅ Redirect based on role
-if (formData.role === "doctor") {
-  // Example: Make the first doctor admin (you can later fetch this from DB)
-  if (formData.mobile === "9999999999") {
-    localStorage.setItem("isAdmin", "true");
-  } else {
-    localStorage.setItem("isAdmin", "false");
-  }
-  navigate("/doctor-dashboard");
-} else {
-  localStorage.setItem("isAdmin", "false");
-  navigate("/dashboard");
-}
-    } else {
+    if (!formData.mobile || !formData.password) {
       setError("Please enter both mobile number and password.");
+      return;
+    }
+
+    // ==== DOCTOR LOGIN ====
+    if (formData.role === "doctor") {
+      const doctors = JSON.parse(localStorage.getItem("doctorsList")) || [];
+
+      const matched = doctors.find(
+        (doc) =>
+          doc.contact === formData.mobile &&
+          doc.password === formData.password
+      );
+
+      if (!matched) {
+        setError("Invalid doctor credentials!");
+        return;
+      }
+
+      // Successful login for doctor
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userRole", "doctor");
+      localStorage.setItem("doctorId", matched.id);
+      localStorage.setItem("isAdmin", matched.isAdmin ? "true" : "false");
+
+      navigate("/doctor-dashboard");
+      return;
+    }
+
+    // ==== PATIENT LOGIN ====
+    if (formData.role === "patient") {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userRole", "patient");
+      localStorage.setItem("isAdmin", "false");
+
+      navigate("/dashboard");
     }
   };
 
-  // Background setup
   useEffect(() => {
     document.body.classList.add("login-bg");
     return () => document.body.classList.remove("login-bg");
@@ -70,7 +83,8 @@ if (formData.role === "doctor") {
   return (
     <div className="login-bg">
       <div className="signup-wrapper">
-        {/* Left Section */}
+
+        {/* Left */}
         <div className="signup-left">
           <div className="signup-title">HOSPITAL</div>
           <div className="signup-desc">Management Service</div>
@@ -84,6 +98,7 @@ if (formData.role === "doctor") {
               onChange={handleChange}
               required
             />
+
             <input
               type="password"
               name="password"
@@ -93,20 +108,22 @@ if (formData.role === "doctor") {
               required
             />
 
-            {/* 👇 Role Selection Dropdown */}
-            <select
-              name="role"
-              value={formData.role}
-              onChange={handleChange}
-              required
-            >
-              <option value="patient">Login as Patient</option>
-              <option value="doctor">Login as Doctor</option>
-            </select>
+            {/* Stylish Select */}
+            <div className="select-box">
+              <select
+                name="role"
+                value={formData.role}
+                onChange={handleChange}
+                required
+              >
+                <option value="patient">Login as Patient</option>
+                <option value="doctor">Login as Doctor</option>
+              </select>
+            </div>
 
             <div className="login-extra-row">
               <label className="remember-label">
-                <input type="checkbox" style={{ marginRight: 4 }} /> Remember me
+                <input type="checkbox" /> Remember me
               </label>
               <span
                 className="forgot-link"
@@ -124,8 +141,6 @@ if (formData.role === "doctor") {
           {submitted && (
             <div className="registration-details">
               <b>Login Successful!</b>
-              <br />
-              Role: {formData.role === "doctor" ? "Doctor" : "Patient"}
             </div>
           )}
 
@@ -142,36 +157,22 @@ if (formData.role === "doctor") {
           )}
         </div>
 
-        {/* Right Section */}
+        {/* Right Side */}
         <div className="signup-right">
           <div className="hospital-circle">
             <span className="circle-title">HOSPITAL Management Service</span>
-            <span className="circle-icon icon1">
-              <FaStethoscope size={28} />
-            </span>
-            <span className="circle-icon icon2">
-              <FaHeart size={28} />
-            </span>
-            <span className="circle-icon icon3">
-              <FaAmbulance size={28} />
-            </span>
-            <span className="circle-icon icon4">
-              <FaSyringe size={28} />
-            </span>
-            <span className="circle-icon icon5">
-              <FaPills size={28} />
-            </span>
-            <span className="circle-icon icon6">
-              <FaUserMd size={28} />
-            </span>
-            <span className="circle-icon icon7">
-              <FaNotesMedical size={28} />
-            </span>
-            <span className="circle-icon icon8">
-              <FaProcedures size={28} />
-            </span>
+
+            <span className="circle-icon icon1"><FaStethoscope size={28} /></span>
+            <span className="circle-icon icon2"><FaHeart size={28} /></span>
+            <span className="circle-icon icon3"><FaAmbulance size={28} /></span>
+            <span className="circle-icon icon4"><FaSyringe size={28} /></span>
+            <span className="circle-icon icon5"><FaPills size={28} /></span>
+            <span className="circle-icon icon6"><FaUserMd size={28} /></span>
+            <span className="circle-icon icon7"><FaNotesMedical size={28} /></span>
+            <span className="circle-icon icon8"><FaProcedures size={28} /></span>
           </div>
         </div>
+
       </div>
     </div>
   );

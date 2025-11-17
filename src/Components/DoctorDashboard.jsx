@@ -15,13 +15,7 @@ const DoctorDashboard = () => {
 
   // Common doctor functionalities
   const doctorSections = [
-    {
-      id: 1,
-      title: "Profile Management",
-      description: "Update your profile, specialization, and consultation hours.",
-      icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-      path: "/doctor-profile",
-    },
+
     {
       id: 2,
       title: "Appointments",

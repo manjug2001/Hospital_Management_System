@@ -8,14 +8,7 @@ const UserDashboard = () => {
   const navigate = useNavigate();
 
   const dashboardSections = [
-    {
-      id: 1,
-      title: "Profile Management",
-      description:
-        "View and update your profile, change password, and manage your account details securely.",
-      icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-      path: "/profile",
-    },
+
     {
       id: 2,
       title: "Book Appointment",

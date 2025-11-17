@@ -1,0 +1,126 @@
+.doctor-reports-page {
+  background: #f8fdfe;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 100vw;
+}
+
+.doctor-reports-main {
+  padding: 70px 6%;
+  text-align: center;
+}
+
+.reports-heading {
+  color: #0a828d;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.reports-subheading {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* === Patient Select Dropdown === */
+.patient-select-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.patient-select-box select {
+  width: 350px;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  background: white;
+  cursor: pointer;
+}
+
+.patient-select-box select:focus {
+  border-color: #0a828d;
+}
+
+/* Upload Box */
+.report-upload-box {
+  background: white;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+}
+
+.report-upload-box h3 {
+  color: #0a828d;
+  margin-bottom: 15px;
+}
+
+.report-upload-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0a828d;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.upload-btn:hover {
+  background: #086974;
+}
+
+/* Reports Table */
+.reports-table-wrapper {
+  margin-top: 30px;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.reports-table th {
+  background: #0a828d;
+  color: white;
+  padding: 14px;
+}
+
+.reports-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.view-btn {
+  padding: 8px 14px;
+  background: #0a828d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background: #086974;
+}
+
+.no-results {
+  margin-top: 15px;
+  color: #777;
+}
