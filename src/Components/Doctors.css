@@ -3,10 +3,10 @@
   min-height: 100vh;
   width: 100vw;
   font-family: 'Segoe UI', Arial, sans-serif;
-  overflow-x: hidden; /* Prevents unwanted horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* Center heading properly */
+/* Heading */
 .doctors-heading {
   text-align: center;
   color: #0a828d;
@@ -15,7 +15,7 @@
   margin: 40px 0 20px;
 }
 
-/* Filter section aligned center under heading */
+/* Filters */
 .filter-section {
   display: flex;
   justify-content: center;
@@ -34,22 +34,21 @@
   color: #0a828d;
   cursor: pointer;
   background-color: #f8fdfe;
-  ;
 }
 
-/* Doctor grid - fills full width */
+/* Grid */
 .doctor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 60px auto;
-  padding: 0 40px;
+  padding: 0 20px;
   justify-items: center;
 }
 
-/* Doctor card styling */
+/* Card */
 .doctor-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -98,6 +97,7 @@
   margin-bottom: 20px;
 }
 
+/* Button */
 .book-btn {
   background-color: #0a828d;
   color: #fff;
@@ -111,4 +111,36 @@
 
 .book-btn:hover {
   background-color: #086974;
+}
+
+/* Responsive Adjustments */
+
+@media (max-width: 768px) {
+  .doctors-heading {
+    font-size: 24px;
+  }
+
+  .doctor-card {
+    padding: 20px;
+  }
+
+  .doctor-card img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-grid {
+    padding: 0 10px;
+  }
+
+  .doctor-card {
+    max-width: 260px;
+  }
+
+  .doctors-heading {
+    font-size: 22px;
+    margin-top: 20px;
+  }
 }
